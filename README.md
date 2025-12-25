@@ -315,3 +315,7 @@ Found an issue or want to improve the comparison? Fork the repository and submit
 🏆 Conclusion
 This project highlights how different learning rate schedulers affect training dynamics and final accuracy.  
 ReduceLROnPlateau gave the best results in this experiment, but each scheduler has trade‑offs depending on dataset and model.
+
+Medium Blog post
+
+https://medium.com/@allam.satyanarayana/learning-rate-schedulers-in-deep-learning-a-practical-comparison-with-cifar-10-066fdececfc8
