@@ -1,0 +1,47 @@
+<mxfile host="65bd71144e">
+    <diagram id="LR_Scheduler_Arch" name="Project Architecture">
+        <mxGraphModel dx="1000" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="CIFAR-10 Dataset&#10;(32x32 RGB Images)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="80" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="ResNet18&#10;(Pretrained ImageNet)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="240" y="80" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Modified FC Layer&#10;(nn.Linear 512 -&gt; 10)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+                    <mxGeometry x="460" y="80" width="140" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="Training Loop (30 Epochs)" style="swimlane;whiteSpace=wrap;html=1;startSize=23;" vertex="1" parent="1">
+                    <mxGeometry x="220" y="210" width="410" height="310" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="Optimizer: Adam&#10;(LR=0.001)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="5">
+                    <mxGeometry x="30" y="50" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="Loss Function:&#10;CrossEntropyLoss" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="5">
+                    <mxGeometry x="250" y="50" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="LR Schedulers Comparison" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="5">
+                    <mxGeometry x="110" y="140" width="180" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="StepLR&#10;(Rigid)" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="5">
+                    <mxGeometry x="30" y="190" width="100" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="ReduceLROnPlateau&#10;(Adaptive)" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="5">
+                    <mxGeometry x="145" y="190" width="120" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="CosineAnnealing&#10;(Mathematical)" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="5">
+                    <mxGeometry x="280" y="190" width="110" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="Evaluation Metrics&#10;(Accuracy &amp; Loss)" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+                    <mxGeometry x="340" y="560" width="170" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" edge="1" parent="1" source="2" target="3"><mxGeometry relative="1" as="geometry"/></mxCell>
+                <mxCell id="14" edge="1" parent="1" source="3" target="4"><mxGeometry relative="1" as="geometry"/></mxCell>
+                <mxCell id="15" edge="1" parent="1" source="4" target="5"><mxGeometry relative="1" as="geometry"/></mxCell>
+                <mxCell id="16" edge="1" parent="1" source="5" target="12"><mxGeometry relative="1" as="geometry"/></mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
